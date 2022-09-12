@@ -3,10 +3,12 @@ package com.interest.controller;
 import com.interest.config.Response;
 import com.interest.pojo.Interest;
 import com.interest.service.InterestService;
+import com.interest.service.ManagerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.Map;
@@ -20,6 +22,9 @@ import java.util.Map;
 public class InterestController {
     @Resource
     private InterestService interestService;
+
+    @Autowired
+    private ManagerService managerService;
 
     @ApiOperation(value = "添加学员")
     @PostMapping("/add")
@@ -64,5 +69,16 @@ public class InterestController {
     })
     public Map queryInterestVague(String thing,int pages,int num) {
         return interestService.queryInterestVague(thing,pages,num);
+    }
+
+    @ApiOperation(value = "login")
+    @GetMapping("/login")
+    @ResponseBody
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "code", value = "账号", required = true),
+            @ApiImplicitParam(name = "password", value = "密码", required = true),
+    })
+    public Response login(String code,String password) {
+        return managerService.login(code,password);
     }
 }

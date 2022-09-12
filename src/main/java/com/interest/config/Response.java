@@ -2,6 +2,9 @@ package com.interest.config;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * @author a1002
+ */
 @Data
 @AllArgsConstructor
 public class Response {
