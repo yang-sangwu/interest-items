@@ -68,6 +68,7 @@ public class InterestController {
             @ApiImplicitParam(name = "num", value = "查询数量", required = true),
     })
     public Map queryInterestVague(String thing,int pages,int num) {
+
         return interestService.queryInterestVague(thing,pages,num);
     }
 }
