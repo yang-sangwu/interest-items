@@ -1,4 +1,4 @@
-package com.intrest;
+package com.interest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
