@@ -29,8 +29,8 @@ public class InterestController {
     @ApiOperation(value = "添加学员")
     @PostMapping("/add")
     @ResponseBody
-    public int insertStudent(Interest interest) {
-        return interestService.insertStudent(interest);
+    public int insertStudent(String name,String sex,String birthday,String phone,String type,String course,String registerTime,String remaining,String score) {
+        return interestService.insertStudent(name,sex,birthday,phone,type,course, registerTime, remaining, score);
     }
 
     @ApiOperation(value = "删除")

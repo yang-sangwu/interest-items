@@ -6,6 +6,7 @@ import com.interest.config.Response;
 import com.interest.mapper.InterestMapper;
 import com.interest.pojo.Interest;
 import com.interest.service.InterestService;
+import com.interest.utils.IDutils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.HashMap;
@@ -22,7 +23,9 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
     private InterestMapper interestMapper;
 
     @Override
-    public int insertStudent(Interest interest) {
+    public int insertStudent(String name,String sex,String birthday,String phone,String type,String course,String registerTime,String remaining,String score) {
+        String code=IDutils.getUUID(16);
+        Interest interest=new Interest(code,name,sex,birthday,phone,type,course, registerTime, remaining, score);
         return interestMapper.insert(interest);
     }
 

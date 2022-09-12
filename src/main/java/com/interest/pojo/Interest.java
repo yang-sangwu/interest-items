@@ -27,4 +27,17 @@ public class Interest {
     private String registerTime;
     private String remaining;
     private String score;
+
+    public Interest(String code, String name, String sex, String birthday, String phone, String type, String course, String registerTime, String remaining, String score) {
+        this.code = code;
+        this.name = name;
+        this.sex = sex;
+        this.birthday = birthday;
+        this.phone = phone;
+        this.type = type;
+        this.course = course;
+        this.registerTime = registerTime;
+        this.remaining = remaining;
+        this.score = score;
+    }
 }

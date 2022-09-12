@@ -23,3 +23,4 @@ mybatis-plus:
 #  # 扫描通用枚举的
  # 包
 #  type-enums-package: com.interest.enums
+

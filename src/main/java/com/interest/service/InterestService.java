@@ -14,7 +14,7 @@ public interface InterestService extends IService<Interest> {
      * @param interest rule id
      * @return Result<XxixDO>
      */
-    int insertStudent(Interest interest);
+    int insertStudent(String name,String sex,String birthday,String phone,String type,String course,String registerTime,String remaining,String score);
 
     /**
      * fetch data by rule id
