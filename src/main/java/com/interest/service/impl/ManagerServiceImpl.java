@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author a1002
@@ -25,11 +26,15 @@ public class ManagerServiceImpl extends ServiceImpl<ManagerMapper, Manager> impl
         QueryWrapper<Manager> wrapper = Wrappers.query();
         wrapper.in("code", code).last("limit 1");
         List<Manager> list = managerMapper.selectList(wrapper);
-        Manager manager=list.get(0);
-        if(manager.getPassword().equals(password)){
-            return Response.ok("success!");
+        if(!list.isEmpty()) {
+            Manager manager = list.get(0);
+            if (manager.getPassword().equals(password)) {
+                return Response.ok("登录成功!");
+            } else {
+                return Response.error("密码错误!");
+            }
         }else{
-            return Response.error("failed!");
+            return Response.error("请先注册！");
         }
     }
 }
