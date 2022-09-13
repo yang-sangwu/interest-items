@@ -66,7 +66,7 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
             map.put("总共的页数为", list2);
             int thePage = (pages - 1) * num;
             //使用listIn来存放分页查询数据
-            for (int i = thePage; i < num; i++) {
+            for (int i = thePage; i < thePage+num; i++) {
                 listIn.add(userList.get(i));
             }
             map.put("查询信息", listIn);
@@ -108,7 +108,7 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
             map.put("总共的页数为", list2);
             int thePage = (pages - 1) * num;
             //使用listIn来存放分页查询数据
-            for (int i = thePage; i < num; i++) {
+            for (int i = thePage; i < num+thePage; i++) {
                 listIn.add(userList.get(i));
             }
             map.put("查询信息", listIn);
