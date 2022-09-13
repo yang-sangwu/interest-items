@@ -7,7 +7,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.Map;
@@ -55,7 +54,7 @@ public class InterestController {
             @ApiImplicitParam(name = "pages", value = "第几页", required = true),
             @ApiImplicitParam(name = "num", value = "查询数量", required = true),
     })
-    public Map queryInterestByPages(@Param("pages") int pages, @Param("num") int num) {
+    public Map queryInterestByPages(int pages,  int num) {
         return interestService.queryInterestByPages(pages, num);
     }
 
@@ -68,7 +67,7 @@ public class InterestController {
             @ApiImplicitParam(name = "pages", value = "第几页", required = true),
             @ApiImplicitParam(name = "num", value = "查询数量", required = true),
     })
-    public Map queryInterestVague(@Param("thing") String thing,@Param("pages") int pages,@Param("num") int num) {
+    public Map queryInterestVague(String thing,int pages,int num) {
         return interestService.queryInterestVague(thing,pages,num);
     }
 }
