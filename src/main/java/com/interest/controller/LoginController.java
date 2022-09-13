@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
@@ -30,11 +32,11 @@ public class LoginController {
         return managerService.login(code,password);
     }
 
-//    @ApiOperation(value = "loginTest")
-//    @PostMapping("/loginTest")
-//    @ResponseBody
-//    @CrossOrigin
-//    public Map loginTest(HttpServletRequest request) {
-//        return managerService.loginTest(request);
-//    }
+    @ApiOperation(value = "loginTest")
+    @PostMapping("/loginTest")
+    @ResponseBody
+    @CrossOrigin
+    public Map loginTest(HttpServletRequest request) {
+        return managerService.loginTest(request);
+    }
 }

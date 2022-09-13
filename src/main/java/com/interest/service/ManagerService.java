@@ -13,5 +13,5 @@ import java.util.Map;
 public interface ManagerService extends IService<Manager> {
     Map login(String code, String password);
 
- //   Map loginTest(HttpServletRequest request);
+    Map loginTest(HttpServletRequest request);
 }
