@@ -11,7 +11,7 @@ import java.util.Map;
 public interface InterestService extends IService<Interest> {
     /**
      * fetch data by rule id
-     * @param interest rule id
+     * @param birthday rule id
      * @return Result<XxixDO>
      */
     int insertStudent(String name,String sex,String birthday,String phone,String type,String course,String registerTime,String remaining,String score);
