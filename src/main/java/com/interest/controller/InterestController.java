@@ -54,7 +54,7 @@ public class InterestController {
             @ApiImplicitParam(name = "pages", value = "第几页", required = true),
             @ApiImplicitParam(name = "num", value = "查询数量", required = true),
     })
-    public Map queryInterestByPages(int pages,  int num) {
+    public Map queryInterestByPages(@RequestParam(value = "pages") int pages,  @RequestParam(value = "num")int num) {
         return interestService.queryInterestByPages(pages, num);
     }
 
@@ -67,7 +67,7 @@ public class InterestController {
             @ApiImplicitParam(name = "pages", value = "第几页", required = true),
             @ApiImplicitParam(name = "num", value = "查询数量", required = true),
     })
-    public Map queryInterestVague(String thing,int pages,int num) {
+    public Map queryInterestVague(@RequestParam(value = "thing") String thing,@RequestParam(value = "pages")int pages,@RequestParam(value = "num")int num) {
         return interestService.queryInterestVague(thing,pages,num);
     }
 }
