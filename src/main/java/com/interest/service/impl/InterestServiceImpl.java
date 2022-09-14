@@ -1,6 +1,7 @@
 package com.interest.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.interest.config.Response;
 import com.interest.mapper.InterestMapper;
@@ -126,5 +127,14 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
             map.put("totalPages", list2);
             return map;
         }
+    }
+
+    @Override
+    public Response updateScore(String score,int id) {
+        Interest interest=interestMapper.selectById(id);
+        UpdateWrapper<Interest> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.set("score",score).eq("id",id);
+        int result = interestMapper.update(interest,updateWrapper);
+        return Response.ok(result);
     }
 }

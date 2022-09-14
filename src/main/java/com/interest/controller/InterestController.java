@@ -70,4 +70,16 @@ public class InterestController {
     public Map queryInterestVague(@RequestParam(value = "thing") String thing,@RequestParam(value = "pages")int pages,@RequestParam(value = "num")int num) {
         return interestService.queryInterestVague(thing,pages,num);
     }
+
+    @ApiOperation(value = "添加学分")
+    @PutMapping("/addScore")
+    @ResponseBody
+    @CrossOrigin
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "score", value = "学分", required = true),
+            @ApiImplicitParam(name = "id", value = "id", required = true),
+    })
+    public Response updateScore(String score,int id) {
+        return interestService.updateScore(score,id);
+    }
 }
