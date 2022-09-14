@@ -67,8 +67,10 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
             map.put("totalPages", list2);
             int thePage = (pages - 1) * num;
             //使用listIn来存放分页查询数据
-            for (int i = thePage; i < thePage+num; i++) {
-                listIn.add(userList.get(i));
+            for (int i = thePage; i < thePage+num && i < userList.size(); i++) {
+                if(userList.get(i) != null){
+                    listIn.add(userList.get(i));
+                }
             }
             map.put("data", listIn);
             List<Integer> listCounts = new LinkedList<>();
@@ -109,8 +111,10 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
             map.put("totalPages", list2);
             int thePage = (pages - 1) * num;
             //使用listIn来存放分页查询数据
-            for (int i = thePage; i < num+thePage; i++) {
-                listIn.add(userList.get(i));
+            for (int i = thePage; i < num+thePage && i < userList.size(); i++) {
+                if(userList.get(i) != null){
+                    listIn.add(userList.get(i));
+                }
             }
             map.put("data", listIn);
             List<Integer> listCounts = new LinkedList<>();
