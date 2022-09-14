@@ -39,4 +39,6 @@ public interface InterestService extends IService<Interest> {
 
     Map queryInterestVague(String thing,int pages,int num);
 
+    Response updateScore(String score,int id);
+
 }
