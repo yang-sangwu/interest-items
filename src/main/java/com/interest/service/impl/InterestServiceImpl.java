@@ -63,25 +63,25 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
             }
             List<Integer> list2 = new LinkedList<>();
             list2.add(totalPages);
-            map.put("总共的页数为", list2);
+            map.put("totalPages", list2);
             int thePage = (pages - 1) * num;
             //使用listIn来存放分页查询数据
             for (int i = thePage; i < thePage+num; i++) {
                 listIn.add(userList.get(i));
             }
-            map.put("查询信息", listIn);
+            map.put("data", listIn);
             List<Integer> listCounts = new LinkedList<>();
             listCounts.add(userList.size());
-            map.put("总条数为", listCounts);
+            map.put("totals", listCounts);
             return map;
         } else {
             List<Integer> integerList = new LinkedList<>();
             integerList.add(userList.size());
-            map.put("总条数为", integerList);
-            map.put("查询信息", userList);
+            map.put("totals", integerList);
+            map.put("data", userList);
             List<Integer> list2 = new LinkedList<>();
             list2.add(1);
-            map.put("总共的页数为", list2);
+            map.put("totalPages", list2);
             return map;
         }
     }
@@ -105,25 +105,25 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
             }
             List<Integer> list2 = new LinkedList<>();
             list2.add(totalPages);
-            map.put("总共的页数为", list2);
+            map.put("totalPages", list2);
             int thePage = (pages - 1) * num;
             //使用listIn来存放分页查询数据
             for (int i = thePage; i < num+thePage; i++) {
                 listIn.add(userList.get(i));
             }
-            map.put("查询信息", listIn);
+            map.put("data", listIn);
             List<Integer> listCounts = new LinkedList<>();
             listCounts.add(userList.size());
-            map.put("总条数为", listCounts);
+            map.put("totals", listCounts);
             return map;
         } else {
             List<Integer> integerList = new LinkedList<>();
             integerList.add(userList.size());
-            map.put("总条数为", integerList);
-            map.put("查询信息", userList);
+            map.put("totals", integerList);
+            map.put("data", userList);
             List<Integer> list2 = new LinkedList<>();
             list2.add(1);
-            map.put("总共的页数为", list2);
+            map.put("totalPages", list2);
             return map;
         }
     }
