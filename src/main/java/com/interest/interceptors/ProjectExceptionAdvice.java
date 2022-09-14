@@ -18,6 +18,6 @@ public class ProjectExceptionAdvice {
         //通知运维
         //通知开发
         ex.printStackTrace();
-        return Response.ok("服务器异常，请稍后重试！");
+        return Response.ok("输入异常，请稍后重试！");
     }
 }
