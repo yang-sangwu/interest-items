@@ -7,12 +7,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/intrest?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: 1314521zjx
-  redis:
-      host: 110.40.210.213
-      port: 6379
-      password: YSY@20031018
-      timeout: 2000
+    password: 12345678
+#  redis:
+#      host: 110.40.210.213
+#      port: 6379
+#      password: YSY@20031018
+#      timeout: 2000
 
 mybatis-plus:
   configuration:
