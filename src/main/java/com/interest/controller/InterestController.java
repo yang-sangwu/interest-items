@@ -25,8 +25,8 @@ public class InterestController {
     @PostMapping("/add")
     @ResponseBody
     @CrossOrigin
-    public int insertStudent(String name,String sex,String birthday,String phone,String type,String course,String registerTime,String remaining,String score) {
-        return interestService.insertStudent(name,sex,birthday,phone,type,course, registerTime, remaining, score);
+    public int insertStudent(@RequestBody Interest interest) {
+        return interestService.insertStudent(interest);
     }
 
     @ApiOperation(value = "删除")
