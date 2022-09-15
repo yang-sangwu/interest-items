@@ -24,9 +24,8 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
     private InterestMapper interestMapper;
 
     @Override
-    public int insertStudent(String name,String sex,String birthday,String phone,String type,String course,String registerTime,String remaining,String score) {
-        String code=IDutils.getUUID(16);
-        Interest interest=new Interest(code,name,sex,birthday,phone,type,course, registerTime, remaining, score);
+    public int insertStudent(Interest interest) {
+        interest.setCode(IDutils.getUUID(16));
         return interestMapper.insert(interest);
     }
 

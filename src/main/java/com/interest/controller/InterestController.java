@@ -25,18 +25,8 @@ public class InterestController {
     @PostMapping("/add")
     @ResponseBody
     @CrossOrigin
-//    public int insertStudent(String name,String sex,String birthday,String phone,String type,String course,String registerTime,String remaining,String score) {
-    public int insertStudent(@RequestBody Interest interest){
-        String name = interest.getName();
-        String sex = interest.getSex();
-        String birthday = interest.getBirthday();
-        String phone = interest.getPhone();
-        String type = interest.getType();
-        String course = interest.getCourse();
-        String registerTime = interest.getRegisterTime();
-        String remaining = interest.getRemaining();
-        String score = interest.getScore();
-        return interestService.insertStudent(name,sex,birthday,phone,type,course, registerTime, remaining, score);
+    public int insertStudent(@RequestBody Interest interest) {
+        return interestService.insertStudent(interest);
     }
 
     @ApiOperation(value = "删除")
