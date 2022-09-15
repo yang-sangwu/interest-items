@@ -7,6 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.Map;
@@ -81,5 +82,13 @@ public class InterestController {
     })
     public Response updateScore(String score,int id) {
         return interestService.updateScore(score,id);
+    }
+
+    @ApiOperation(value = "根据id查询")
+    @GetMapping("/findUserById")
+    @ResponseBody
+    @CrossOrigin
+    public Interest findUserById(@Param("id") long id) {
+        return interestService.findUserById(id);
     }
 }

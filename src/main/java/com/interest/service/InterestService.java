@@ -11,7 +11,7 @@ import java.util.Map;
 public interface InterestService extends IService<Interest> {
     /**
      * fetch data by rule id
-     * @param birthday rule id
+     * @param interest rule id
      * @return Result<XxixDO>
      */
     int insertStudent(Interest interest);
@@ -40,5 +40,7 @@ public interface InterestService extends IService<Interest> {
     Map queryInterestVague(String thing,int pages,int num);
 
     Response updateScore(String score,int id);
+
+    Interest findUserById(long id);
 
 }

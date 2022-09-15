@@ -140,4 +140,9 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
         int result = interestMapper.update(interest,updateWrapper);
         return Response.ok(result);
     }
+
+    @Override
+    public Interest findUserById(long id) {
+        return interestMapper.selectById(id);
+    }
 }
