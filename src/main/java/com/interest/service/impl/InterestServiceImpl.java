@@ -48,7 +48,9 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
 
     @Override
     public Map queryInterestByPages(int pages, int num) {
-        List<Interest> userList = interestMapper.selectList(null);
+        QueryWrapper<Interest>queryWrapper=new QueryWrapper<>();
+        queryWrapper.orderByDesc("id");
+        List<Interest> userList = interestMapper.selectList(queryWrapper);
         Map<String, List> map = new HashMap<>();
         if (userList.size() > num) {
             List<Interest> listIn = new LinkedList<>();//用来存放分页后获取的数据
@@ -91,7 +93,7 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
     @Override
     public Map queryInterestVague(String thing,int pages,int num) {
         QueryWrapper<Interest> wrapper = new QueryWrapper();
-        wrapper.like("name", thing).or().like("sex",thing).or().like("birthday",thing).or().like("phone",thing).or().like("type",thing).or().like("score",thing);
+        wrapper.like("name", thing).or().like("sex",thing).or().like("birthday",thing).or().like("phone",thing).or().like("type",thing).or().like("score",thing).orderByDesc("id");
         List<Interest> userList = interestMapper.selectList(wrapper);
         Map<String, List> map = new HashMap<>();
         if (userList.size() > num) {
@@ -133,7 +135,7 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
     }
 
     @Override
-    public Response updateScore(String score,int id) {
+    public Response updateScore(String score,long id) {
         Interest interest=interestMapper.selectById(id);
         UpdateWrapper<Interest> updateWrapper = new UpdateWrapper<>();
         updateWrapper.set("score",score).eq("id",id);
