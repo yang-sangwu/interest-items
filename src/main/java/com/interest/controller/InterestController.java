@@ -44,7 +44,7 @@ public class InterestController {
     @PutMapping("/update")
     @ResponseBody
     @CrossOrigin
-    public Response updateStudent(@RequestParam Interest interest) {
+    public Response updateStudent(Interest interest) {
         return interestService.updateStudent(interest);
     }
 
