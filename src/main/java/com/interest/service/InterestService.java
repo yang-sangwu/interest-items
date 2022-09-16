@@ -3,6 +3,8 @@ package com.interest.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.interest.config.Response;
 import com.interest.pojo.Interest;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -43,4 +45,5 @@ public interface InterestService extends IService<Interest> {
 
     Interest findUserById(long id);
 
+    int delete(List<Long> list);
 }
