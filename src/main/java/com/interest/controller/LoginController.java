@@ -28,7 +28,7 @@ public class LoginController {
             @ApiImplicitParam(name = "password", value = "密码", required = true),
     })
     @CrossOrigin
-    public Map login(String code, String password) {
+    public Map login(@RequestParam("code") String code, @RequestParam("password") String password) {
         return managerService.login(code,password);
     }
 
