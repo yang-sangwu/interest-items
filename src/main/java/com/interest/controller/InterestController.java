@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -90,5 +91,13 @@ public class InterestController {
     @CrossOrigin
     public Interest findUserById(@Param("id") long id) {
         return interestService.findUserById(id);
+    }
+
+    @ApiOperation(value = "根据id批量删除")
+    @GetMapping("/deleteIdBath")
+    @ResponseBody
+    @CrossOrigin
+    public int  deleteById(@RequestParam("list")List<Long>list) {
+        return interestService.delete(list);
     }
 }

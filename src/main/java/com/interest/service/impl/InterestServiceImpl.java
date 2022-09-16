@@ -147,4 +147,12 @@ public class InterestServiceImpl extends ServiceImpl<InterestMapper,Interest> im
     public Interest findUserById(long id) {
         return interestMapper.selectById(id);
     }
+
+    @Override
+    public int delete(List<Long> list) {
+        for(long l:list) {
+            interestMapper.deleteById(l);
+        }
+        return 1;
+    }
 }
