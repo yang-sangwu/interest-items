@@ -57,6 +57,8 @@ public class InterestController {
             @ApiImplicitParam(name = "num", value = "查询数量", required = true),
     })
     public Map queryInterestByPages(@RequestParam(value = "pages") int pages,  @RequestParam(value = "num")int num) {
+        System.out.println(interestService.queryInterestByPages(pages, num));
+
         return interestService.queryInterestByPages(pages, num);
     }
 
