@@ -88,10 +88,10 @@ public class InterestController {
     }
 
     @ApiOperation(value = "根据id查询")
-    @GetMapping("/findUserById")
+    @GetMapping("/findUserById/{id}")
     @ResponseBody
     @CrossOrigin
-    public Interest findUserById(@Param("id") long id) {
+    public Interest findUserById(@PathVariable long id) {
         return interestService.findUserById(id);
     }
 
